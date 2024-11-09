@@ -1,0 +1,32 @@
+[
+  {
+    "character": "我",
+    "pinyin": "wǒ",
+    "translation": "I, me",
+    "hskLevel": 1
+  },
+  {
+    "character": "你",
+    "pinyin": "nǐ",
+    "translation": "you",
+    "hskLevel": 1
+  },
+  {
+    "character": "他",
+    "pinyin": "tā",
+    "translation": "he, him",
+    "hskLevel": 1
+  },
+  {
+    "character": "她",
+    "pinyin": "tā",
+    "translation": "she, her",
+    "hskLevel": 1
+  },
+  {
+    "character": "我们",
+    "pinyin": "wǒ men",
+    "translation": "we, us",
+    "hskLevel": 1
+  }
+]
