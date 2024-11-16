@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import sampleFlashcards from "./data/sample-flashcards.json";
 import { Flashcard } from "./types";
@@ -12,18 +12,21 @@ const App: React.FC = () => {
     const fetchFlashcards = async () => {
       try {
         const response = await axios.get("http://localhost:8080/v1/flashcards");
-        setFlashcards(response.data);
+        return response.data;
+        // setFlashcards(response.data);
       } catch (error) {
         console.error('Error fetching flashcards: ', error);
 
         // ! Use sample flashcards if backend isn't running
-        setFlashcards(sampleFlashcards);
-      } finally {
-        setIsLoading(false);
+        return sampleFlashcards;
       }
     };
 
-    fetchFlashcards();
+    fetchFlashcards()
+      .then((flashcards) => {
+        setFlashcards(flashcards);
+        setIsLoading(false);
+      })
   }, []);
 
   // TODO: A loading spinner while flashcards is empty or loading

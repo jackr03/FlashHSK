@@ -31,8 +31,16 @@ const Flashcards: React.FC<FlashcardProps> = ({ flashcards }) => {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.code === "Space") {
-        handleCardClick();
+      switch (event.code) {
+        case "Space":
+          handleCardClick();
+          break;
+        case "ArrowLeft":
+          handlePreviousClick();
+          break;
+        case "ArrowRight":
+          handleNextClick();
+          break;
       }
     };
 
