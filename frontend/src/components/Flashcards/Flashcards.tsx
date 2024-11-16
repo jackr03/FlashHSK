@@ -16,6 +16,20 @@ const Flashcards: React.FC<FlashcardProps> = ({ flashcards }) => {
   const showPreviousButton = currentCardIndex > 0;
   const showNextButton = currentCardIndex < flashcards.length - 1;
 
+  const handlePreviousClick = useCallback(() => {
+    setCurrentCardIndex((currentCardIndex) =>
+      Math.max(0, currentCardIndex - 1)
+    );
+    setCurrentCardIsFlipped(false);
+  }, []);
+
+  const handleNextClick = useCallback(() => {
+    setCurrentCardIndex((currentCardIndex) =>
+      Math.min(flashcards.length - 1, currentCardIndex + 1)
+    );
+    setCurrentCardIsFlipped(false);
+  }, [flashcards.length]);
+
   const handleCardClick = useCallback(() => {
     setCurrentCardIsFlipped((currentCardIsFlipped) => {
       // If the card is already flipped, move to the next card
@@ -49,21 +63,7 @@ const Flashcards: React.FC<FlashcardProps> = ({ flashcards }) => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [handleCardClick]);
-
-  const handlePreviousClick = () => {
-    setCurrentCardIndex((currentCardIndex) =>
-      Math.max(0, currentCardIndex - 1)
-    );
-    setCurrentCardIsFlipped(false);
-  };
-
-  const handleNextClick = () => {
-    setCurrentCardIndex((currentCardIndex) =>
-      Math.min(flashcards.length - 1, currentCardIndex + 1)
-    );
-    setCurrentCardIsFlipped(false);
-  };
+  }, [handleCardClick, handlePreviousClick, handleNextClick]);
 
   return (
     <section className="flex flex-col items-center justify-center">
