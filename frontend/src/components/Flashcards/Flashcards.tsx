@@ -8,7 +8,6 @@ interface FlashcardProps {
 }
 
 const Flashcards: React.FC<FlashcardProps> = ({ flashcards }) => {
-  // TODO: Load flashcards from an API
   const [currentCardIndex, setCurrentCardIndex] = useState<number>(0);
   const [currentCardIsFlipped, setCurrentCardIsFlipped] =
     useState<boolean>(false);

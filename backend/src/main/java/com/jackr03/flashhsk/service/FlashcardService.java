@@ -16,4 +16,8 @@ public class FlashcardService {
     public List<Flashcard> getAllFlashcards() {
         return flashcardRepository.findAll();
     }
+
+    public List<Flashcard> getFlashcardsByHskLevel(int hskLevel) {
+        return flashcardRepository.findByHskLevel(hskLevel);
+    }
 }
