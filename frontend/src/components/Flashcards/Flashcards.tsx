@@ -66,7 +66,7 @@ const Flashcards: React.FC<FlashcardProps> = ({ flashcards }) => {
 
   return (
     <section className="flex flex-col items-center justify-center">
-      <button onClick={handleCardClick}>
+      <button onClick={handleCardClick} data-testid="flashcard">
         <FlashcardInfo
           flashcard={flashcards[currentCardIndex]}
           isFlipped={currentCardIsFlipped}
