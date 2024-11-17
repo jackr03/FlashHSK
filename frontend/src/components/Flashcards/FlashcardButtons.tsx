@@ -17,6 +17,7 @@ const FlashcardButtons: React.FC<FlashcardButtonsProps> = ({
       {showPreviousButton && <button
           className="absolute left-0 border-2 text-black bg-white rounded-xl shadow-md px-4 py-2 hover:bg-blue-200 hover:text-white"
           onClick={onPreviousClick}
+          data-testid="previous-button"
       >
         Prev
       </button>
@@ -25,6 +26,7 @@ const FlashcardButtons: React.FC<FlashcardButtonsProps> = ({
       {showNextButton && <button
           className="absolute right-0 border-2 text-black bg-white rounded-xl shadow-md px-4 py-2 hover:bg-blue-200 hover:text-white"
           onClick={onNextClick}
+          data-testid="next-button"
       >
         Next
       </button>
