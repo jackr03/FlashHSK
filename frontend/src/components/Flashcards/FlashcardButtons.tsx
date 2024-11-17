@@ -1,19 +1,3 @@
-interface FlashcardButtonProps {
-  text: string;
-  onClick: () => void;
-}
-
-const FlashcardButton: React.FC<FlashcardButtonProps> = ({ text, onClick }) => {
-  return (
-    <button
-      className="border-2 text-black bg-white rounded-xl shadow-md px-4 py-2 hover:bg-blue-200 hover:text-white"
-      onClick={onClick}
-    >
-      {text}
-    </button>
-  );
-};
-
 interface FlashcardButtonsProps {
   showPreviousButton: boolean;
   showNextButton: boolean;
@@ -29,16 +13,22 @@ const FlashcardButtons: React.FC<FlashcardButtonsProps> = ({
   onNextClick,
 }) => {
   return (
-    <div className="flex justify-between w-full py-4">
-      {
-        showPreviousButton ? (
-          <FlashcardButton text="Prev" onClick={onPreviousClick} />
-        ) : (
-          <div></div>
-        ) // Placeholder for layout
+    <div className="relative w-full py-4">
+      {showPreviousButton && <button
+          className="absolute left-0 border-2 text-black bg-white rounded-xl shadow-md px-4 py-2 hover:bg-blue-200 hover:text-white"
+          onClick={onPreviousClick}
+      >
+        Prev
+      </button>
       }
 
-      {showNextButton && <FlashcardButton text="Next" onClick={onNextClick} />}
+      {showNextButton && <button
+          className="absolute right-0 border-2 text-black bg-white rounded-xl shadow-md px-4 py-2 hover:bg-blue-200 hover:text-white"
+          onClick={onNextClick}
+      >
+        Next
+      </button>
+      }
     </div>
   );
 };
