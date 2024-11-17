@@ -17,8 +17,8 @@ const FlashcardInfo: React.FC<FlashcardInfoProps> = ({
         <p className="text-xl" data-testid="translation">{translation}</p>
       ) : (
         <>
-          <h2 className="text-xl mb-2" data-testid="character">{pinyin}</h2>
-          <h1 className="text-6xl font-bold mb-5" data-testid="pinyin">{character}</h1>
+          <h2 className="text-xl mb-2" data-testid="pinyin">{pinyin}</h2>
+          <h1 className="text-6xl font-bold mb-5" data-testid="character">{character}</h1>
         </>
       )}
     </div>
