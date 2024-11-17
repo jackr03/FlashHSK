@@ -28,6 +28,7 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	implementation 'jakarta.validation:jakarta.validation-api'
 	implementation 'org.hibernate.validator:hibernate-validator'
+	implementation 'com.h2database:h2'
 }
 
 tasks.named('test') {
