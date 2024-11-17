@@ -14,11 +14,11 @@ const FlashcardInfo: React.FC<FlashcardInfoProps> = ({
   return (
     <div className="flex flex-col items-center justify-center bg-white p-8 rounded-xl shadow-md w-60 h-72">
       {isFlipped ? (
-        <p className="text-xl">{translation}</p>
+        <p className="text-xl" data-testid="translation">{translation}</p>
       ) : (
         <>
-          <h2 className="text-xl mb-2">{pinyin}</h2>
-          <h1 className="text-6xl font-bold mb-5">{character}</h1>
+          <h2 className="text-xl mb-2" data-testid="character">{pinyin}</h2>
+          <h1 className="text-6xl font-bold mb-5" data-testid="pinyin">{character}</h1>
         </>
       )}
     </div>
