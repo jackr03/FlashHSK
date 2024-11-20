@@ -5,7 +5,8 @@ import { Flashcard } from "./types";
 import Flashcards from "./components/Flashcards/Flashcards";
 
 const App: React.FC = () => {
-  const flashcardsUrl = `${import.meta.env.VITE_BACKEND_URL}/v1/flashcards`;
+  const backendURL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8080";
+  const flashcardsUrl = `${backendURL}/v1/flashcards`;
 
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [flashcards, setFlashcards] = useState<Flashcard[]>([]);
@@ -17,7 +18,6 @@ const App: React.FC = () => {
         return response.data;
       } catch (error) {
         console.error('Error fetching flashcards: ', error);
-
         // Use sample flashcards if backend isn't running
         return sampleFlashcards;
       }
