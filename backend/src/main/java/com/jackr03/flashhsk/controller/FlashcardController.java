@@ -15,7 +15,6 @@ import java.util.List;
 @Validated
 @RestController
 @RequestMapping("/v1/flashcards")
-// FIXME: CORS issue
 public class FlashcardController {
 
     @Autowired

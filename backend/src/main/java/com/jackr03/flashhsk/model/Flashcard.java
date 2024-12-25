@@ -18,7 +18,7 @@ public class Flashcard {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     @NotEmpty
     private String character;
