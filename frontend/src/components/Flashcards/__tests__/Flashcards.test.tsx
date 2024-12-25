@@ -1,26 +1,27 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
-import { Flashcard } from "../../../types.ts";
-import Flashcards from "../Flashcards.tsx";
+
+import { Flashcard } from '../../../types.ts';
+import Flashcards from '../Flashcards.tsx';
 
 const mockFlashcards: Flashcard[] = [
   {
-    character: "我",
-    pinyin: "wǒ",
-    translation: "I, me",
+    character: '我',
+    pinyin: 'wǒ',
+    translation: 'I, me',
     hskLevel: 1
   },
   {
-    character: "你",
-    pinyin: "nǐ",
-    translation: "you",
+    character: '你',
+    pinyin: 'nǐ',
+    translation: 'you',
     hskLevel: 1
   },
   {
-    character: "他",
-    pinyin: "tā",
-    translation: "he, him",
+    character: '他',
+    pinyin: 'tā',
+    translation: 'he, him',
     hskLevel: 1
   }
 ];

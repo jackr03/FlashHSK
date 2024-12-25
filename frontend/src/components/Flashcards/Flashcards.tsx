@@ -1,7 +1,9 @@
-import { useCallback, useEffect, useState } from "react";
-import { Flashcard } from "../../types";
-import FlashcardButtons from "./FlashcardButtons";
-import FlashcardInfo from "./FlashcardInfo";
+import { useCallback, useEffect, useState } from 'react';
+
+import { Flashcard } from '../../types';
+
+import FlashcardButtons from './FlashcardButtons';
+import FlashcardInfo from './FlashcardInfo';
 
 interface FlashcardProps {
   flashcards: Flashcard[];
@@ -45,22 +47,22 @@ const Flashcards: React.FC<FlashcardProps> = ({ flashcards }) => {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       switch (event.code) {
-        case "Space":
+        case 'Space':
           handleCardClick();
           break;
-        case "ArrowLeft":
+        case 'ArrowLeft':
           handlePreviousClick();
           break;
-        case "ArrowRight":
+        case 'ArrowRight':
           handleNextClick();
           break;
       }
     };
 
-    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener('keydown', handleKeyDown);
 
     return () => {
-      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener('keydown', handleKeyDown);
     };
   }, [handleCardClick, handlePreviousClick, handleNextClick]);
 

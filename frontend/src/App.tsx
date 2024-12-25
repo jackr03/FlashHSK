@@ -1,13 +1,14 @@
-import { useState, useEffect, useRef } from "react";
-import LoadingBar, { LoadingBarRef } from "react-top-loading-bar";
-import { ClipLoader } from "react-spinners";
-import axios from "axios";
-import sampleFlashcards from "./data/sample-flashcards.json";
-import { Flashcard } from "./types";
-import Flashcards from "./components/Flashcards/Flashcards";
+import { useState, useEffect, useRef } from 'react';
+import LoadingBar, { LoadingBarRef } from 'react-top-loading-bar';
+import { ClipLoader } from 'react-spinners';
+import axios from 'axios';
+
+import sampleFlashcards from './data/sample-flashcards.json';
+import { Flashcard } from './types';
+import Flashcards from './components/Flashcards/Flashcards';
 
 const App: React.FC = () => {
-  const backendURL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8080";
+  const backendURL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8080';
   const flashcardsUrl = `${backendURL}/v1/flashcards`;
 
   const [flashcards, setFlashcards] = useState<Flashcard[]>([]);

@@ -1,7 +1,8 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen } from '@testing-library/react';
+
 import '@testing-library/jest-dom';
-import { Flashcard } from "../../../types.ts";
-import FlashcardInfo from "../FlashcardInfo.tsx";
+import { Flashcard } from '../../../types.ts';
+import FlashcardInfo from '../FlashcardInfo.tsx';
 
 const mockFlashcard: Flashcard = {
   character: '的',

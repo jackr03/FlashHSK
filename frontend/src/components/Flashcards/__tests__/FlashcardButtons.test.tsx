@@ -1,6 +1,7 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen } from '@testing-library/react';
+
 import '@testing-library/jest-dom';
-import FlashcardButtons from "../FlashcardButtons.tsx";
+import FlashcardButtons from '../FlashcardButtons.tsx';
 
 describe('FlashcardButtons', () => {
   it('renders both buttons correctly', () => {

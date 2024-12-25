@@ -1,4 +1,4 @@
-import { Flashcard } from "../../types";
+import { Flashcard } from '../../types';
 
 interface FlashcardInfoProps {
   flashcard: Flashcard;
