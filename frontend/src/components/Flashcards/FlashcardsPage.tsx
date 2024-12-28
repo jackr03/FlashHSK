@@ -20,16 +20,11 @@ const FlashcardsPage: React.FC = () => {
 
   return (
     <>
-      <LoadingBar
-        color="red"
-        height={4}
-        ref={loadingBarRef}
-        data-testid="test"
-      />
+      <LoadingBar color="red" height={4} ref={loadingBarRef} />
 
       <div className="flex min-h-screen flex-col items-center justify-center bg-gray-100">
         {isLoading ? (
-          <ClipLoader color="red" size={50} data-testid="test" />
+          <ClipLoader color="red" size={50} data-testid="loading-indicator" />
         ) : (
           <Flashcards flashcards={flashcards} />
         )}

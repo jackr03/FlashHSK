@@ -33,7 +33,9 @@ describe('useFetchFlashcards', () => {
 
     expect(result.current.isLoading).toEqual(true);
     await waitFor(() => expect(result.current.isLoading).toBe(false));
-    expect(result.current.flashcards).toEqual(mockFlashcards);
+    await waitFor(() =>
+      expect(result.current.flashcards).toEqual(mockFlashcards),
+    );
   });
 
   it('should return sample flashcards if endpoint fails', async () => {
@@ -43,6 +45,8 @@ describe('useFetchFlashcards', () => {
 
     expect(result.current.isLoading).toEqual(true);
     await waitFor(() => expect(result.current.isLoading).toBe(false));
-    expect(result.current.flashcards).toEqual(sampleFlashcards);
+    await waitFor(() =>
+      expect(result.current.flashcards).toEqual(sampleFlashcards),
+    );
   });
 });
