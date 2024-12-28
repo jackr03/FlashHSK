@@ -4,11 +4,15 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 import importPlugin from "eslint-plugin-import";
+import tailwind from "eslint-plugin-tailwindcss";
 
 export default tseslint.config(
-  { ignores: ["dist"] },
+  {ignores: ["dist"]},
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended],
+    extends: [js.configs.recommended,
+      ...tseslint.configs.recommended,
+      ...tailwind.configs["flat/recommended"],
+    ],
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
       ecmaVersion: 2020,
@@ -23,12 +27,12 @@ export default tseslint.config(
       ...reactHooks.configs.recommended.rules,
       "react-refresh/only-export-components": [
         "warn",
-        { allowConstantExport: true },
+        {allowConstantExport: true},
       ],
       quotes: [
         "error",
         "single",
-        { avoidEscape: true, allowTemplateLiterals: true },
+        {avoidEscape: true, allowTemplateLiterals: true},
       ],
       "import/order": [
         "error",
@@ -43,7 +47,7 @@ export default tseslint.config(
           "newlines-between": "always",
         },
       ],
-      "import/newline-after-import": ["error", { count: 1 }],
+      "import/newline-after-import": ["error", {count: 1}],
       "import/no-duplicates": "error",
       semi: ["error", "always"],
     },
